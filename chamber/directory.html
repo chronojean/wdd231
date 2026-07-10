@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ureña Chamber of Commerce Directory</title>
+  <meta name="description" content="Discover businesses in Ureña, Táchira, Venezuela. Join the Ureña Chamber of Commerce to grow your business network.">
+  <meta name="author" content="Jean Andrade">
+  
+  <!-- Open Graph Meta Tags for Facebook -->
+  <meta property="og:title" content="Ureña Chamber of Commerce">
+  <meta property="og:description" content="Discover businesses and services in Ureña, Táchira. Join our growing business community.">
+  <meta property="og:image" content="https://chronojean.github.io/wdd231/chamber/images/favicon.png">
+  <meta property="og:url" content="https://chronojean.github.io/wdd231/chamber/directory.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
+  
+  <!-- JS -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo-area">
+        <img src="images/favicon.png" alt="Ureña Chamber of Commerce Logo" class="logo">
+        <div class="site-title">
+          <h1>Ureña</h1>
+          <span>Chamber of Commerce</span>
+        </div>
+      </div>
+      <button id="menu" aria-label="Menu" aria-expanded="false"></button>
+    </div>
+  </header>
+  
+  <nav>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Discovery</a></li>
+      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="#">Join</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="title-container">
+      <h2>Business Directory</h2>
+    </div>
+    
+    <div class="directory-controls">
+      <button id="grid-btn" class="active">🔲 Grid</button>
+      <button id="list-btn">📄 List</button>
+    </div>
+
+    <div id="directory-container" class="grid">
+      <!-- Cards dynamically injected here -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <div>
+        <strong>Ureña Chamber of Commerce</strong><br>
+        Avenida Principal<br>
+        Ureña, Táchira, Venezuela<br>
+        info@urenachamber.com
+      </div>
+      <div>
+        <p>&copy; <span id="currentyear"></span> Ureña Chamber</p>
+        <p>Jean Andrade | WDD 231</p>
+        <p id="lastModified"></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

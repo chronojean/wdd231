@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Arte Barbería",
+        "address": "Ureña, Táchira, Venezuela",
+        "phone": "+58 414-1234567",
+        "website": "https://www.facebook.com/artebarberia",
+        "image": "images/arte_barberia.png",
+        "membershipLevel": 3,
+        "description": "Barbería clásica y moderna, cortes de cabello y cuidado de la barba con el mejor estilo de la frontera."
+    },
+    {
+        "name": "Hotel Aguas Calientes",
+        "address": "Ureña, Táchira, Venezuela",
+        "phone": "+58 276-1234568",
+        "website": "https://www.hotelaguascalientes.com",
+        "image": "images/hotel_aguas_calientes.png",
+        "membershipLevel": 2,
+        "description": "Hotel tradicional famoso por sus aguas termales curativas, ofreciendo relajación y confort."
+    },
+    {
+        "name": "Farmacia Ureña",
+        "address": "Carrera 4, Ureña, Táchira, Venezuela",
+        "phone": "0276-7871360",
+        "website": "https://www.farmaciaurena.com.ve",
+        "image": "images/farmacia_urena.png",
+        "membershipLevel": 1,
+        "description": "Tu salud es nuestra prioridad. Amplio surtido de medicinas y misceláneos."
+    },
+    {
+        "name": "Farmacia Luz",
+        "address": "Carrera 15, Ureña, Táchira, Venezuela",
+        "phone": "0276-7870420",
+        "website": "https://www.farmacialuz.com.ve",
+        "image": "images/farmacia_luz.png",
+        "membershipLevel": 1,
+        "description": "Atención especializada y venta de medicamentos de las mejores marcas nacionales e internacionales."
+    },
+    {
+        "name": "Farmacia Santa María, C.A.",
+        "address": "Avenida Principal, Ureña, Táchira, Venezuela",
+        "phone": "0276-7872225",
+        "website": "https://www.farmaciasantamaria.com",
+        "image": "images/farmacia_santa_maria.png",
+        "membershipLevel": 2,
+        "description": "Una farmacia de confianza con años de servicio en la comunidad fronteriza."
+    },
+    {
+        "name": "Hotel Palmeras Country Club",
+        "address": "Ureña, Táchira, Venezuela",
+        "phone": "+58 276-5555555",
+        "website": "https://www.hotelpalmerascountry.com",
+        "image": "images/hotel_palmeras.png",
+        "membershipLevel": 3,
+        "description": "El lugar ideal para tus vacaciones familiares o viajes de negocios con amplias instalaciones."
+    },
+    {
+        "name": "Hotel Plaza de los Andes",
+        "address": "Ureña, Táchira, Venezuela",
+        "phone": "+58 276-6666666",
+        "website": "https://www.hotelplazadelosandes.com",
+        "image": "images/hotel_plaza.png",
+        "membershipLevel": 1,
+        "description": "Hospedaje cómodo y seguro en el corazón de Ureña."
+    }
+]
