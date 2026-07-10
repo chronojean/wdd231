@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jean Andrade - WDD 231 Course Home Page</title>
+  <meta name="description" content="WDD 231 Course Home Page for Jean Andrade">
+  <meta name="author" content="Jean Andrade">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
+  
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="images/byui-logo.svg" alt="BYU-Idaho Logo">
+    <span>Jean Andrade</span>
+    <button id="menu" aria-label="Menu" aria-expanded="false"></button>
+  </header>
+  
+  <nav>
+    <ul class="navigation">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Chamber</a></li>
+      <li><a href="#">Final</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Home</h1>
+    
+    <div class="content-grid">
+      <section class="about-card">
+        <h2>About Me</h2>
+        <p>Hello! I am Jean Andrade from Ureña, Táchira, Venezuela. I am an aspiring web developer taking the WDD 231 course to improve my frontend development skills and learn how to build accessible, responsive, and dynamic web applications. In my free time, I enjoy learning about new technologies and building projects. I look forward to creating amazing web experiences!</p>
+      </section>
+
+      <section class="photo-card">
+        <h2>Student Photo</h2>
+        <img src="images/profile.jpg" alt="Jean Andrade" width="300" height="300" loading="lazy">
+      </section>
+    </div>
+
+    <section class="courses-card">
+      <h2>Web Certificate Courses</h2>
+      <div class="filter-buttons">
+        <button id="filter-all" class="active">All</button>
+        <button id="filter-cse">CSE</button>
+        <button id="filter-wdd">WDD</button>
+      </div>
+      <div id="course-list">
+        <!-- Courses injected via JS -->
+      </div>
+      <p id="total-credits"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/JeanAndrade" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="30" height="30" loading="lazy">
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" height="30" loading="lazy">
+      </a>
+    </div>
+    <p>&copy; <span id="currentyear"></span> | Jean Andrade | Ureña, Táchira, Venezuela</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* larger.css - Desktop/Tablet */
+@media screen and (min-width: 600px) {
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-card, .photo-card {
+    margin-bottom: 0;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .navigation li a {
+    padding: 1rem 2rem;
+  }
+}
