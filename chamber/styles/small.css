@@ -7,6 +7,7 @@
   --card-bg: #ffffff;
   --text-color: #333333;
   --font-family: 'Outfit', sans-serif;
+  --font-heading: 'Merriweather', serif;
   --border-radius: 8px;
 }
 
@@ -50,6 +51,7 @@ header {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1;
+  font-family: var(--font-heading);
 }
 
 .site-title span {
@@ -112,6 +114,7 @@ main {
   text-align: center;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  font-family: var(--font-heading);
 }
 
 .directory-controls {
@@ -224,6 +227,7 @@ footer {
   font-size: 2rem;
   margin: 0 0 1rem 0;
   font-weight: 700;
+  font-family: var(--font-heading);
 }
 
 .hero p {
@@ -298,6 +302,7 @@ footer {
 .spotlights-section h2 {
   color: var(--primary-color);
   font-size: 1.4rem;
+  font-family: var(--font-heading);
   border-bottom: 3px solid var(--accent-color);
   padding-bottom: 0.5rem;
   margin-bottom: 1.25rem;
