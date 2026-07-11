@@ -4,7 +4,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   #menu {
     display: none;
   }
@@ -21,14 +21,13 @@
     padding: 1rem 2rem;
   }
 
-  /* Grid view layout */
+  /* ── Directory Grid / List ────────────────────────────── */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }
 
-  /* List view layout */
   .list {
     display: flex;
     flex-direction: column;
@@ -51,6 +50,33 @@
     flex: 2;
   }
 
+  /* ── Home: Info Cards row ─────────────────────────────── */
+  .info-cards {
+    flex-direction: row;
+  }
+
+  .info-card {
+    flex: 1;
+  }
+
+  /* ── Home: Events + Spotlights side by side ──────────── */
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* ── Hero bigger on desktop ───────────────────────────── */
+  .hero {
+    padding: 5rem 3rem;
+  }
+
+  .hero h2 {
+    font-size: 2.8rem;
+  }
+
+  /* ── Footer ───────────────────────────────────────────── */
   .footer-info {
     flex-direction: row;
     justify-content: space-around;
