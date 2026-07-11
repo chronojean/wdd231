@@ -15,6 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Shared Chamber CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
+
+  <!-- Navigation JS -->
+  <script src="scripts/navigation.js" defer></script>
+
   <style>
     /* ── Reset & Base ──────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,52 +47,7 @@
       line-height: 1.7;
     }
 
-    /* ── Header ─────────────────────────────────────────────── */
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-
-    header .logo-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header img {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-    }
-
-    header h1 {
-      font-family: var(--font-head);
-      font-size: 1.9rem;
-    }
-
-    header p {
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-
-    /* ── Nav breadcrumb ─────────────────────────────────────── */
-    .breadcrumb {
-      background-color: var(--secondary);
-      padding: 0.6rem 2rem;
-      font-size: 0.88rem;
-    }
-
-    .breadcrumb a {
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    .breadcrumb a:hover { color: white; }
-    .breadcrumb span { color: #aaa; margin: 0 0.4rem; }
+    /* ── Siteplan-specific overrides ────────────────────────── */
 
     /* ── Main layout ─────────────────────────────────────────── */
     main {
@@ -292,19 +255,26 @@
 <body>
 
   <header>
-    <div class="logo-row">
-      <img src="images/favicon.png" alt="Ureña Chamber of Commerce Logo">
-      <h1>Ureña Chamber of Commerce</h1>
+    <div class="header-content">
+      <div class="logo-area">
+        <img src="images/favicon.png" alt="Ureña Chamber of Commerce Logo" class="logo">
+        <div class="site-title">
+          <h1>Ureña</h1>
+          <span>Chamber of Commerce</span>
+        </div>
+      </div>
+      <button id="menu" aria-label="Menu" aria-expanded="false"></button>
     </div>
-    <p>WDD 231 — Chamber of Commerce Site Plan | Jean Andrade</p>
   </header>
 
-  <nav class="breadcrumb">
-    <a href="../index.html">WDD 231 Home</a>
-    <span>›</span>
-    <a href="index.html">Chamber</a>
-    <span>›</span>
-    Site Plan
+  <nav>
+    <ul class="navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Discovery</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="siteplan.html" class="active">Site Plan</a></li>
+      <li><a href="#">Join</a></li>
+    </ul>
   </nav>
 
   <main>
