@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ureña Chamber of Commerce – Site Plan</title>
+  <meta name="description" content="Site plan document for the Ureña Chamber of Commerce website — WDD 231 project by Jean Andrade.">
+  <meta name="author" content="Jean Andrade">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:   #2b3a42;
+      --secondary: #3f5765;
+      --accent:    #ff5722;
+      --bg:        #f8f9fa;
+      --card:      #ffffff;
+      --text:      #333333;
+      --muted:     #666666;
+      --radius:    8px;
+      --font-body: 'Outfit', sans-serif;
+      --font-head: 'Merriweather', serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    header .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-family: var(--font-head);
+      font-size: 1.9rem;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* ── Nav breadcrumb ─────────────────────────────────────── */
+    .breadcrumb {
+      background-color: var(--secondary);
+      padding: 0.6rem 2rem;
+      font-size: 0.88rem;
+    }
+
+    .breadcrumb a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: white; }
+    .breadcrumb span { color: #aaa; margin: 0 0.4rem; }
+
+    /* ── Main layout ─────────────────────────────────────────── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── Section titles ─────────────────────────────────────── */
+    h2 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
+      padding-left: 0.85rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: var(--secondary);
+      margin: 1.2rem 0 0.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--text); }
+
+    /* ── Info card ───────────────────────────────────────────── */
+    .info-box {
+      background: var(--card);
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    /* ── Color Palette ───────────────────────────────────────── */
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 110px;
+    }
+
+    .swatch-color {
+      width: 100px;
+      height: 75px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .swatch-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .swatch-hex {
+      font-size: 0.78rem;
+      color: #999;
+      font-family: monospace;
+    }
+
+    /* ── Typography preview ─────────────────────────────────── */
+    .type-preview {
+      background: var(--card);
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .type-preview .sample-heading {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .type-preview .sample-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .type-meta {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid #eee;
+      padding-top: 0.6rem;
+    }
+
+    .type-meta strong { color: var(--secondary); }
+
+    /* ── Wireframe image ─────────────────────────────────────── */
+    .wireframe-wrap {
+      text-align: center;
+      margin: 1.25rem 0;
+    }
+
+    .wireframe-wrap img {
+      max-width: 100%;
+      border: 2px solid #ddd;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .wireframe-wrap figcaption {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* ── Scenarios / personas table ─────────────────────────── */
+    .scenarios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .scenario-card {
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .scenario-card h4 {
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scenario-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── Page list ───────────────────────────────────────────── */
+    .page-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .page-list li {
+      background: var(--card);
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .page-list li span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      background-color: var(--primary);
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.88rem;
+      margin-top: 2rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 580px) {
+      .scenarios { grid-template-columns: 1fr; }
+      .palette   { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-row">
+      <img src="images/favicon.png" alt="Ureña Chamber of Commerce Logo">
+      <h1>Ureña Chamber of Commerce</h1>
+    </div>
+    <p>WDD 231 — Chamber of Commerce Site Plan | Jean Andrade</p>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="../index.html">WDD 231 Home</a>
+    <span>›</span>
+    <a href="index.html">Chamber</a>
+    <span>›</span>
+    Site Plan
+  </nav>
+
+  <main>
+
+    <!-- ── 1. Site Name & Logo ─────────────────────────────── -->
+    <h2>1. Site Name &amp; Logo</h2>
+    <div class="info-box">
+      <h3>Site Name</h3>
+      <p><strong>Ureña Chamber of Commerce</strong> — a business community hub for the border city of Ureña, Táchira, Venezuela.</p>
+      <h3>Logo</h3>
+      <p>The logo is a simple icon representing local identity and professionalism.
+        It is displayed in the header of every page alongside the site name.</p>
+      <p style="margin-top:0.5rem;">
+        <img src="images/favicon.png" alt="Chamber Logo" style="width:60px;height:60px;border-radius:50%;border:2px solid #ddd;vertical-align:middle;">
+        &nbsp; <code>images/favicon.png</code>
+      </p>
+    </div>
+
+    <!-- ── 2. Site Purpose ─────────────────────────────────── -->
+    <h2>2. Site Purpose</h2>
+    <div class="info-box">
+      <p>The <strong>Ureña Chamber of Commerce</strong> website serves as the official digital presence for local
+        businesses in Ureña, Táchira, Venezuela. Its primary purposes are:</p>
+      <ul style="padding-left:1.5rem; margin-bottom:0.75rem;">
+        <li>Provide a <strong>searchable directory</strong> of member businesses with contact information.</li>
+        <li>Announce <strong>community events</strong> and networking opportunities.</li>
+        <li>Feature <strong>member spotlights</strong> to promote Gold and Silver tier businesses.</li>
+        <li>Offer an easy way for businesses to <strong>join</strong> the chamber and grow their network.</li>
+        <li>Serve as a reliable information source about Ureña's business ecosystem.</li>
+      </ul>
+    </div>
+
+    <!-- ── 3. Target Audience ─────────────────────────────── -->
+    <h2>3. Target Audience</h2>
+    <div class="scenarios">
+      <div class="scenario-card">
+        <h4>🏪 Local Business Owners</h4>
+        <p>Entrepreneurs in Ureña who want to grow their customer base and network with other businesses in the region.</p>
+      </div>
+      <div class="scenario-card">
+        <h4>🛍️ Consumers &amp; Residents</h4>
+        <p>Locals and visitors looking for trusted businesses, services, and upcoming community events in the city.</p>
+      </div>
+      <div class="scenario-card">
+        <h4>📦 Wholesale &amp; Border Traders</h4>
+        <p>Cross-border traders who rely on Ureña's commercial activity and need to find reliable suppliers and partners.</p>
+      </div>
+      <div class="scenario-card">
+        <h4>🏛️ Government &amp; Institutions</h4>
+        <p>Municipal offices and NGOs interested in connecting with the local business community for development projects.</p>
+      </div>
+    </div>
+
+    <!-- ── 4. Pages ────────────────────────────────────────── -->
+    <h2>4. Site Pages</h2>
+    <ul class="page-list">
+      <li>🏠 Home <span>index.html — Hero, events, spotlights</span></li>
+      <li>📋 Directory <span>directory.html — Member cards with grid/list view</span></li>
+      <li>🔍 Discovery <span>discovery.html — Explore Ureña (future)</span></li>
+      <li>📝 Join <span>join.html — Membership form (future)</span></li>
+      <li>📄 Site Plan <span>siteplan.html — This document</span></li>
+    </ul>
+
+    <!-- ── 5. Color Palette ───────────────────────────────── -->
+    <h2>5. Color Palette</h2>
+    <div class="info-box">
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#2b3a42;"></div>
+          <div class="swatch-label">Primary<br>Dark Slate</div>
+          <div class="swatch-hex">#2b3a42</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#3f5765;"></div>
+          <div class="swatch-label">Secondary<br>Steel Blue</div>
+          <div class="swatch-hex">#3f5765</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#ff5722;"></div>
+          <div class="swatch-label">Accent<br>Vibrant Orange</div>
+          <div class="swatch-hex">#ff5722</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#f4f4f4; border:1px solid #ccc;"></div>
+          <div class="swatch-label">Background<br>Light Gray</div>
+          <div class="swatch-hex">#f4f4f4</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#ffffff; border:1px solid #ccc;"></div>
+          <div class="swatch-label">Card BG<br>White</div>
+          <div class="swatch-hex">#ffffff</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background-color:#333333;"></div>
+          <div class="swatch-label">Text<br>Dark Charcoal</div>
+          <div class="swatch-hex">#333333</div>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--muted);margin:0;">
+        All colors are defined as CSS custom properties (variables) in <code>styles/small.css</code> under <code>:root</code>.
+      </p>
+    </div>
+
+    <!-- ── 6. Typography ──────────────────────────────────── -->
+    <h2>6. Typography</h2>
+
+    <div class="type-preview">
+      <div class="sample-heading">Merriweather — Heading Font</div>
+      <div class="sample-body">
+        Ureña Chamber of Commerce connects local businesses with the community.
+      </div>
+      <div class="type-meta">
+        <strong>Font:</strong> Merriweather &nbsp;|&nbsp;
+        <strong>Weights:</strong> 400 (Regular), 700 (Bold) &nbsp;|&nbsp;
+        <strong>Usage:</strong> Page titles, section headings, site plan headers &nbsp;|&nbsp;
+        <strong>Source:</strong> <a href="https://fonts.google.com/specimen/Merriweather" target="_blank" rel="noopener noreferrer">Google Fonts</a>
+      </div>
+    </div>
+
+    <div class="type-preview">
+      <div class="sample-heading" style="font-family:'Outfit',sans-serif; font-size:1.5rem;">Outfit — Body Font</div>
+      <div class="sample-body" style="font-family:'Outfit',sans-serif;">
+        Discover businesses, events, and opportunities in Ureña, Táchira, Venezuela. Join the chamber to grow your network and reach more customers.
+      </div>
+      <div class="type-meta">
+        <strong>Font:</strong> Outfit &nbsp;|&nbsp;
+        <strong>Weights:</strong> 400 (Regular), 600 (SemiBold), 700 (Bold) &nbsp;|&nbsp;
+        <strong>Usage:</strong> Body text, navigation, card content, buttons &nbsp;|&nbsp;
+        <strong>Source:</strong> <a href="https://fonts.google.com/specimen/Outfit" target="_blank" rel="noopener noreferrer">Google Fonts</a>
+      </div>
+    </div>
+
+    <!-- ── 7. Wireframe ───────────────────────────────────── -->
+    <h2>7. Home Page Wireframe</h2>
+    <p>The wireframe below shows the planned layout for the Chamber Home page (<code>index.html</code>).
+       It follows a mobile-first design with responsive columns for tablets and desktops.</p>
+
+    <figure class="wireframe-wrap">
+      <img src="images/wireframe.jpg" alt="Home page wireframe showing header, nav, hero, info cards, events, member spotlights, and footer">
+      <figcaption>Figure 1 — Ureña Chamber of Commerce Home Page Wireframe (Desktop View)</figcaption>
+    </figure>
+
+    <div class="info-box" style="margin-top:1rem;">
+      <h3>Layout Description</h3>
+      <ul style="padding-left:1.5rem;">
+        <li><strong>Header:</strong> Logo + site name on the left, hamburger menu button on mobile.</li>
+        <li><strong>Navigation:</strong> 4 links — Home, Discovery, Directory, Join. Horizontal on desktop, collapsible on mobile.</li>
+        <li><strong>Hero Banner:</strong> Full-width gradient section with headline, sub-text, and CTA button.</li>
+        <li><strong>Info Cards:</strong> 3 cards in a row — current date, weather, member count.</li>
+        <li><strong>Home Grid (2-col on desktop):</strong>
+          <ul>
+            <li>Left — Upcoming Events (3 event cards)</li>
+            <li>Right — Member Spotlights (2–3 random Gold/Silver members)</li>
+          </ul>
+        </li>
+        <li><strong>Footer:</strong> Address, copyright, last modified date.</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; <span id="yr"></span> Ureña Chamber of Commerce &mdash; Jean Andrade | WDD 231</p>
+    <p><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="directory.html">Directory</a></p>
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>
