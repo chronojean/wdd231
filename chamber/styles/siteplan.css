@@ -1,0 +1,199 @@
+/* siteplan.css — Site Plan page-specific styles only
+   Shared header/nav/footer styles come from small.css + larger.css */
+
+/* ── Variables used only in siteplan ───────────────────── */
+:root {
+  --sp-muted:  #666666;
+  --sp-card:   #ffffff;
+  --sp-radius: 8px;
+}
+
+/* ── Main content area ──────────────────────────────────── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ── Section titles (scoped to main to avoid header conflict) */
+main h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  border-left: 5px solid var(--accent-color);
+  padding-left: 0.85rem;
+  margin: 2.5rem 0 1rem;
+}
+
+main h3 {
+  font-size: 1.05rem;
+  color: var(--secondary-color);
+  margin: 1.2rem 0 0.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+main p { margin-bottom: 0.9rem; }
+
+/* ── Info box ───────────────────────────────────────────── */
+.info-box {
+  background: var(--sp-card);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--sp-radius);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ── Color Palette swatches ─────────────────────────────── */
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 110px;
+}
+
+.swatch-color {
+  width: 100px;
+  height: 75px;
+  border-radius: var(--sp-radius);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.swatch-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--sp-muted);
+  text-align: center;
+}
+
+.swatch-hex {
+  font-size: 0.78rem;
+  color: #999;
+  font-family: monospace;
+}
+
+/* ── Typography preview ─────────────────────────────────── */
+.type-preview {
+  background: var(--sp-card);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--sp-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.type-preview .sample-heading {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.type-preview .sample-body {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.type-meta {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--sp-muted);
+  border-top: 1px solid #eee;
+  padding-top: 0.6rem;
+}
+
+.type-meta strong { color: var(--secondary-color); }
+
+/* ── Wireframe ──────────────────────────────────────────── */
+.wireframe-wrap {
+  text-align: center;
+  margin: 1.25rem 0;
+}
+
+.wireframe-wrap img {
+  max-width: 100%;
+  border: 2px solid #ddd;
+  border-radius: var(--sp-radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.wireframe-wrap figcaption {
+  font-size: 0.85rem;
+  color: var(--sp-muted);
+  margin-top: 0.6rem;
+}
+
+/* ── Audience scenarios ─────────────────────────────────── */
+.scenarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.scenario-card {
+  background: var(--sp-card);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 var(--sp-radius) var(--sp-radius) 0;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.scenario-card h4 {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.scenario-card p {
+  font-size: 0.88rem;
+  color: var(--sp-muted);
+  margin: 0;
+}
+
+/* ── Page list ──────────────────────────────────────────── */
+.page-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+.page-list li {
+  background: var(--sp-card);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--sp-radius);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.page-list li span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--sp-muted);
+  margin-top: 0.2rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .scenarios { grid-template-columns: 1fr; }
+  .palette   { justify-content: center; }
+}
