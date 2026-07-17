@@ -23,4 +23,23 @@
   .navigation li a {
     padding: 1rem 2rem;
   }
+
+  /* Desktop Weather Card Layout */
+  .weather-card {
+    max-width: 550px;
+    padding: 3rem 2.5rem;
+  }
+
+  .weather-info {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .temp-container {
+    font-size: 5.5rem;
+  }
 }
+
