@@ -11,11 +11,10 @@ if (dateEl) {
 }
 
 // ── Weather (OpenWeatherMap) ───────────────────────────────────────────────────
-// Ureña, Venezuela coordinates: 7.9309° N, -72.4458° W
-const LAT = 7.9309;
-const LON = -72.4458;
-// NOTE: Replace with your own free API key from openweathermap.org
-const API_KEY = 'demo';
+// Ureña, Venezuela coordinates: 7.9176° N, -72.4309° W
+const LAT = 7.9176;
+const LON = -72.4309;
+const API_KEY = '103a79523007d732c60060e234217768';
 
 async function getWeather() {
     try {
