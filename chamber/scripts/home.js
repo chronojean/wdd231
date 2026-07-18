@@ -28,12 +28,44 @@ async function getWeather() {
         const descEl = document.getElementById('weather-desc');
         if (tempEl) tempEl.textContent = `${Math.round(data.main.temp)}°C`;
         if (descEl) descEl.textContent = data.weather[0].description;
+        
+        // 3-Day Forecast
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&appid=${API_KEY}`;
+        const forecastResponse = await fetch(forecastUrl);
+        if (!forecastResponse.ok) throw new Error('Forecast API unavailable');
+        const forecastData = await forecastResponse.json();
+        
+        const forecastList = document.getElementById('forecast-list');
+        if (forecastList) {
+            forecastList.innerHTML = '';
+            const daysToShow = [8, 16, 24]; // Roughly +24h, +48h, +72h
+            daysToShow.forEach(index => {
+                if (forecastData.list[index]) {
+                    const forecast = forecastData.list[index];
+                    const date = new Date(forecast.dt * 1000);
+                    const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                    const temp = Math.round(forecast.main.temp);
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span>${dayName}:</span> <strong>${temp}°C</strong>`;
+                    forecastList.appendChild(li);
+                }
+            });
+        }
     } catch (error) {
         // Fallback when API key is demo/unavailable
         const tempEl = document.getElementById('weather-temp');
         const descEl = document.getElementById('weather-desc');
         if (tempEl) tempEl.textContent = '27°C';
         if (descEl) descEl.textContent = 'Partly Cloudy · Ureña';
+        
+        const forecastList = document.getElementById('forecast-list');
+        if (forecastList) {
+            forecastList.innerHTML = `
+                <li><span>Tomorrow:</span> <strong>28°C</strong></li>
+                <li><span>Wed:</span> <strong>29°C</strong></li>
+                <li><span>Thu:</span> <strong>27°C</strong></li>
+            `;
+        }
     }
 }
 getWeather();
@@ -68,6 +100,7 @@ async function loadSpotlights() {
                 <div class="spotlight-info">
                     <h3>${member.name}</h3>
                     <p>${member.phone}</p>
+                    <p>${member.address}</p>
                     <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website}</a>
                     <span class="membership-badge ${levelClass}">${levelLabel} Member</span>
                 </div>
