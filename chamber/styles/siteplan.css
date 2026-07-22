@@ -3,7 +3,7 @@
 
 /* ── Variables used only in siteplan ───────────────────── */
 :root {
-  --sp-muted:  #666666;
+  --sp-muted:  #595959;
   --sp-card:   #ffffff;
   --sp-radius: 8px;
 }
@@ -79,7 +79,7 @@ main p { margin-bottom: 0.9rem; }
 
 .swatch-hex {
   font-size: 0.78rem;
-  color: #999;
+  color: #595959;
   font-family: monospace;
 }
 

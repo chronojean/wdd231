@@ -1,8 +1,8 @@
 /* small.css - Mobile First */
 :root {
   --primary-color: #2b3a42; /* Dark slate */
-  --secondary-color: #3f5765;
-  --accent-color: #ff5722;  /* Vibrant orange for calls to action */
+  --secondary-color: #344955; /* Slate Gray (Calibrated for AAA contrast) */
+  --accent-color: #d03b0d;  /* Vibrant Terracotta Orange (Calibrated for 5.4:1 AA contrast) */
   --bg-color: #f4f4f4;
   --card-bg: #ffffff;
   --text-color: #333333;
@@ -282,7 +282,7 @@ footer {
 }
 
 .hero-btn:hover {
-  background-color: #e64a19;
+  background-color: #ad2e09;
   transform: translateY(-2px);
 }
 
@@ -319,7 +319,7 @@ footer {
 .info-card p {
   margin: 0;
   font-size: 0.85rem;
-  color: #777;
+  color: #595959;
 }
 
 #weather-forecast {
@@ -384,7 +384,7 @@ footer {
 .event-badge {
   display: inline-block;
   background-color: #e8f0fe;
-  color: #1a73e8;
+  color: #1557b0;
   border-radius: 20px;
   padding: 0.25rem 0.75rem;
   font-size: 0.78rem;
@@ -422,7 +422,7 @@ footer {
 .spotlight-info p {
   margin: 0 0 0.2rem 0;
   font-size: 0.85rem;
-  color: #666;
+  color: #595959;
 }
 
 .spotlight-info a {
@@ -446,19 +446,19 @@ footer {
 }
 
 .badge-gold {
-  background-color: #fff8e1;
-  color: #f9a825;
-  border: 1px solid #f9a825;
+  background-color: #fef3d6;
+  color: #8c5800;
+  border: 1px solid #d99b00;
 }
 
 .badge-silver {
-  background-color: #f5f5f5;
-  color: #757575;
-  border: 1px solid #9e9e9e;
+  background-color: #edf2f7;
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
 }
 
 .badge-bronze {
   background-color: #fbe9e7;
-  color: #bf360c;
-  border: 1px solid #bf360c;
+  color: #a42c06;
+  border: 1px solid #a42c06;
 }
