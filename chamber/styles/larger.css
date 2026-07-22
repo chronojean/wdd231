@@ -69,6 +69,10 @@
 
   /* ── Hero bigger on desktop ───────────────────────────── */
   .hero {
+    min-height: 420px;
+  }
+
+  .hero-content {
     padding: 5rem 3rem;
   }
 
