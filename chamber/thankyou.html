@@ -3,16 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ureña Chamber of Commerce Directory</title>
-  <meta name="description" content="Discover businesses in Ureña, Táchira, Venezuela. Join the Ureña Chamber of Commerce to grow your business network.">
+  <title>Application Received - Ureña Chamber of Commerce</title>
+  <meta name="description" content="Thank you for submitting your membership application to the Ureña Chamber of Commerce.">
   <meta name="author" content="Jean Andrade">
-  
-  <!-- Open Graph Meta Tags for Facebook -->
-  <meta property="og:title" content="Ureña Chamber of Commerce">
-  <meta property="og:description" content="Discover businesses and services in Ureña, Táchira. Join our growing business community.">
-  <meta property="og:image" content="https://chronojean.github.io/wdd231/chamber/images/favicon.png">
-  <meta property="og:url" content="https://chronojean.github.io/wdd231/chamber/directory.html">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -20,15 +14,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css" media="screen and (min-width: 600px)">
-  
+
   <!-- JS -->
   <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
   <header>
@@ -43,31 +37,38 @@
       <button id="menu" aria-label="Menu" aria-expanded="false"></button>
     </div>
   </header>
-  
+
   <nav>
     <ul class="navigation">
       <li><a href="index.html">Home</a></li>
       <li><a href="#">Discovery</a></li>
-      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="directory.html">Directory</a></li>
       <li><a href="siteplan.html">Site Plan</a></li>
       <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1>Ureña Chamber of Commerce Directory</h1>
-    <div class="title-container">
-      <h2>Business Directory</h2>
-    </div>
-    
-    <div class="directory-controls">
-      <button id="grid-btn" class="active">🔲 Grid</button>
-      <button id="list-btn">📄 List</button>
-    </div>
+    <section class="thankyou-card">
+      <div class="thankyou-header">
+        <span class="success-icon">🎉</span>
+        <h1>Application Submitted!</h1>
+        <p>Thank you for applying to join the Ureña Chamber of Commerce. We are excited to welcome your business to our network.</p>
+      </div>
 
-    <div id="directory-container" class="grid">
-      <!-- Cards dynamically injected here -->
-    </div>
+      <div class="summary-box">
+        <h2>Application Summary</h2>
+        <div id="results">
+          <!-- Dynamically populated by thankyou.js using URLSearchParams -->
+          <p>Loading application details...</p>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <a href="index.html" class="btn-primary">Return to Home Page</a>
+        <a href="directory.html" class="btn-secondary">Explore Business Directory</a>
+      </div>
+    </section>
   </main>
 
   <footer>

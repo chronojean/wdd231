@@ -143,16 +143,18 @@ h2 {
   border-radius: var(--border-radius);
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .filter-buttons button:hover {
   background-color: #cccccc;
+  transform: translateY(-1px);
 }
 
 .filter-buttons button.active {
   background-color: var(--primary-color);
   color: white;
+  box-shadow: 0 2px 8px rgba(27, 38, 59, 0.25);
 }
 
 #course-list {
@@ -160,6 +162,17 @@ h2 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .course-item {
@@ -172,6 +185,7 @@ h2 {
   min-width: 120px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   cursor: pointer;
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 

@@ -89,4 +89,31 @@
     margin: 0 auto;
     text-align: left;
   }
+
+  /* ── Join Page 2-Column Desktop Grid ─────────────────── */
+  .join-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .result-item.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .action-row {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
