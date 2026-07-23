@@ -615,54 +615,210 @@ label textarea:focus {
 }
 
 .tier-card {
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
   text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  overflow: hidden;
 }
 
-.tier-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+/* Tier-specific gradient backgrounds */
+.tier-card.np {
+  background: linear-gradient(145deg, #eef6ff 0%, #ffffff 60%);
+}
+
+/* Bronze — rich copper-orange wash */
+.tier-card.bronze {
+  background: linear-gradient(145deg, #fde8c8 0%, #fff5eb 45%, #ffffff 100%);
+}
+
+/* Bronze diagonal shimmer stripe */
+.tier-card.bronze::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(184, 115, 51, 0.05) 45%,
+    rgba(205, 140, 70, 0.08) 50%,
+    rgba(184, 115, 51, 0.05) 55%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Silver — cool steel-blue wash */
+.tier-card.silver {
+  background: linear-gradient(145deg, #d0dff0 0%, #e8eef7 45%, #f8fafc 100%);
+}
+
+/* Silver diagonal chrome shimmer */
+.tier-card.silver::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(200, 215, 235, 0.07) 43%,
+    rgba(240, 245, 255, 0.2) 50%,
+    rgba(200, 215, 235, 0.07) 57%,
+    transparent 70%
+  );
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Gold — rich amber-champagne wash */
+.tier-card.gold {
+  background: linear-gradient(145deg, #fef08a 0%, #fde68a 30%, #fef3c7 65%, #fffdf0 100%);
+}
+
+/* Gold diagonal shimmer — bright specular highlight */
+.tier-card.gold::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 230, 80, 0.06) 40%,
+    rgba(255, 255, 180, 0.18) 50%,
+    rgba(255, 230, 80, 0.06) 60%,
+    transparent 75%
+  );
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Large decorative background icon */
+.tier-bg-icon {
+  position: absolute;
+  bottom: -10px;
+  right: -5px;
+  font-size: 5.5rem;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tier-card:hover .tier-bg-icon {
+  opacity: 0.12;
+  transform: scale(1.08) rotate(-5deg);
+}
+
+/* Small inline icon beside heading */
+.tier-icon {
+  font-size: 1.15rem;
+  vertical-align: middle;
+  margin-right: 0.2rem;
 }
 
 .tier-card h3 {
   margin: 0 0 0.5rem 0;
   color: var(--primary-color);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
 }
 
 .tier-card .price {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
 }
 
-.tier-card.np { border-top: 4px solid #4a5568; }
-.tier-card.bronze { border-top: 4px solid #a42c06; }
-.tier-card.silver { border-top: 4px solid #718096; }
-.tier-card.gold { border-top: 4px solid #d99b00; }
-
-.benefit-btn {
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  margin-top: 0.75rem;
-  transition: background-color 0.3s;
+/* Tier-Specific Glowing Light Aura Effects */
+.tier-card.np:hover, .tier-card.np:focus-within {
+  transform: translateY(-4px);
+  outline: none;
+  box-shadow: 0 0 20px rgba(80, 165, 255, 0.65), 0 0 40px rgba(80, 165, 255, 0.3);
 }
 
-.benefit-btn:hover {
-  background-color: var(--primary-color);
+.tier-card.bronze:hover, .tier-card.bronze:focus-within {
+  transform: translateY(-4px);
+  outline: none;
+  box-shadow: 0 0 20px rgba(184, 115, 51, 0.75), 0 0 40px rgba(184, 115, 51, 0.35);
+}
+
+.tier-card.silver:hover, .tier-card.silver:focus-within {
+  transform: translateY(-4px);
+  outline: none;
+  box-shadow: 0 0 20px rgba(192, 192, 210, 0.85), 0 0 40px rgba(192, 192, 210, 0.45);
+}
+
+.tier-card.gold:hover, .tier-card.gold:focus-within {
+  transform: translateY(-4px);
+  outline: none;
+  box-shadow: 0 0 22px rgba(255, 200, 50, 0.85), 0 0 44px rgba(255, 200, 50, 0.4);
+}
+
+.benefit-btn {
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* NP: blue */
+.tier-card.np .benefit-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+.tier-card.np .benefit-btn:hover, .tier-card.np .benefit-btn:focus {
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(80, 165, 255, 0.7);
+  outline: none;
+}
+
+/* Bronze: copper */
+.tier-card.bronze .benefit-btn {
+  background: linear-gradient(135deg, #b87333, #8b5a2b);
+}
+.tier-card.bronze .benefit-btn:hover, .tier-card.bronze .benefit-btn:focus {
+  background: linear-gradient(135deg, #cd853f, #a0522d);
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(184, 115, 51, 0.75);
+  outline: none;
+}
+
+/* Silver: steel */
+.tier-card.silver .benefit-btn {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+}
+.tier-card.silver .benefit-btn:hover, .tier-card.silver .benefit-btn:focus {
+  background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+  color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(192, 192, 210, 0.85);
+  outline: none;
+}
+
+/* Gold: amber */
+.tier-card.gold .benefit-btn {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+.tier-card.gold .benefit-btn:hover, .tier-card.gold .benefit-btn:focus {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(255, 200, 50, 0.85);
+  outline: none;
 }
 
 /* Membership Dialog Modals */
