@@ -83,6 +83,7 @@ const totalCreditsElement = document.getElementById('total-credits');
 const filterAllBtn = document.getElementById('filter-all');
 const filterCseBtn = document.getElementById('filter-cse');
 const filterWddBtn = document.getElementById('filter-wdd');
+const courseModal = document.getElementById('course-details');
 
 function renderCourses(courseArray) {
     courseListContainer.innerHTML = '';
@@ -90,19 +91,101 @@ function renderCourses(courseArray) {
     courseArray.forEach(course => {
         const courseDiv = document.createElement('div');
         courseDiv.classList.add('course-item');
+        courseDiv.setAttribute('tabindex', '0');
+        courseDiv.setAttribute('role', 'button');
+        courseDiv.setAttribute('aria-label', `View details for ${course.subject} ${course.number}`);
         if (course.completed) {
             courseDiv.classList.add('completed');
         }
         
+        const checkIcon = course.completed ? '<span class="card-check">✓</span>' : '';
         courseDiv.innerHTML = `
-            <h3>${course.subject} ${course.number}</h3>
+            <h3>${course.subject} ${course.number} ${checkIcon}</h3>
         `;
+
+        courseDiv.addEventListener('click', () => {
+            displayCourseDetails(course);
+        });
+
+        courseDiv.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                displayCourseDetails(course);
+            }
+        });
         
         courseListContainer.appendChild(courseDiv);
     });
 
     const totalCredits = courseArray.reduce((acc, course) => acc + course.credits, 0);
     totalCreditsElement.innerHTML = `The total credits for courses listed above is <strong>${totalCredits}</strong>`;
+}
+
+function displayCourseDetails(course) {
+    if (!courseModal) return;
+    
+    const techBadges = course.technology
+        .map(tech => `<span class="tech-tag">${tech}</span>`)
+        .join('');
+
+    const statusBadge = course.completed 
+        ? `<span class="modal-status completed"><span class="status-icon">✓</span> Completed</span>`
+        : `<span class="modal-status in-progress"><span class="status-icon">⏳</span> In Progress</span>`;
+
+    courseModal.innerHTML = `
+        <button id="closeModal" aria-label="Close modal">✕</button>
+        <div class="modal-header">
+            <span class="course-code-badge">${course.subject} ${course.number}</span>
+            ${statusBadge}
+        </div>
+        <h2 class="modal-title">${course.title}</h2>
+
+        <div class="modal-meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">🎓 Certificate</span>
+                <span class="meta-value">${course.certificate}</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">⚡ Credits</span>
+                <span class="meta-value">${course.credits} Credits</span>
+            </div>
+        </div>
+
+        <div class="modal-description-card">
+            <div class="desc-header">
+                <span class="desc-icon">💡</span>
+                <strong>Course Overview</strong>
+            </div>
+            <p>${course.description}</p>
+        </div>
+
+        <div class="modal-tech-section">
+            <span class="tech-label">🛠️ Technologies:</span>
+            <div class="tech-tags-container">${techBadges}</div>
+        </div>
+    `;
+
+    courseModal.showModal();
+
+    const closeModalBtn = document.getElementById('closeModal');
+    closeModalBtn.addEventListener('click', () => {
+        courseModal.close();
+    });
+}
+
+// Close modal when clicking on the backdrop outside the dialog box
+if (courseModal) {
+    courseModal.addEventListener('click', (event) => {
+        const rect = courseModal.getBoundingClientRect();
+        if (
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom
+        ) {
+            courseModal.close();
+        }
+    });
 }
 
 // Initial render
